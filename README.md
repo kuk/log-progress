@@ -17,7 +17,7 @@ More then one progress bar can be in a sigle cell:
 
 ![](https://habrastorage.org/files/95d/c00/1df/95dc001dffb24852999a73ae8129a209.gif)
 
-Then can even be from different threads:
+They can even be from different threads:
 
 ![](https://habrastorage.org/files/e64/69a/fe5/e6469afe59ed485c84565a672d24cd50.gif)
 
