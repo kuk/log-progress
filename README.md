@@ -50,7 +50,7 @@ def log_progress(sequence, every=None, size=None):
     else:
         progress.bar_style = 'success'
         progress.value = index
-        label.value = unicode(index or '?')
+        label.value = str(index or '?')
 ```
 
 ### Examples
