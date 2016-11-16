@@ -18,7 +18,7 @@ def log_progress(sequence, every=None, size=None):
             if size <= 200:
                 every = 1
             else:
-                every = size / 200     # every 0.5%
+                every = int(size / 200)     # every 0.5%
     else:
         assert every is not None, 'sequence is iterator, set every'
 
