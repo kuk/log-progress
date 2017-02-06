@@ -3,10 +3,10 @@
 ### Code
 Just copy and paste it into your project:
 ```python
-def log_progress(sequence, every=None, size=None):
+def log_progress(sequence, every=None, size=None, name='Items'):
     from ipywidgets import IntProgress, HTML, VBox
     from IPython.display import display
-    
+
     is_iterator = False
     if size is None:
         try:
@@ -30,16 +30,20 @@ def log_progress(sequence, every=None, size=None):
     label = HTML()
     box = VBox(children=[label, progress])
     display(box)
-    
+
     index = 0
     try:
         for index, record in enumerate(sequence, 1):
             if index == 1 or index % every == 0:
                 if is_iterator:
-                    label.value = '{index} / ?'.format(index=index)
+                    label.value = '{name}: {index} / ?'.format(
+                        name=name,
+                        index=index
+                    )
                 else:
                     progress.value = index
-                    label.value = u'{index} / {size}'.format(
+                    label.value = u'{name}: {index} / {size}'.format(
+                        name=name,
                         index=index,
                         size=size
                     )
@@ -50,7 +54,10 @@ def log_progress(sequence, every=None, size=None):
     else:
         progress.bar_style = 'success'
         progress.value = index
-        label.value = str(index or '?')
+        label.value = "{name}: {index}".format(
+            name=name,
+            index=str(index or '?')
+        )
 ```
 
 ### Examples
