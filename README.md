@@ -1,3 +1,5 @@
+> # `log-progress` functionality was integrated into <a href="https://github.com/tqdm/tqdm">`tqdm`</a>. Please, use `from tqdm.notebook import tqdm as log_progress`.
+
 ## Widget based progress bar for Jupyter (IPython Notebook)
 
 ### Code
